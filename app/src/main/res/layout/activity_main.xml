@@ -21,23 +21,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <AutoCompleteTextView
+        <EditText
             android:id="@+id/startingStationTextView"
-            style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:editable="false"
+            android:ems="10"
+            android:inputType="none"
+            android:onClick="onClickStartingStation"
             android:text="@string/starting_station" />
 
-        <AutoCompleteTextView
+        <EditText
             android:id="@+id/destinationStationTextView"
-            style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="@string/destination_station" />
 
         <EditText
             android:id="@+id/dateEditText"
-            style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:autofillHints=""
@@ -47,13 +49,28 @@
 
         <EditText
             android:id="@+id/timeEditText"
-            style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:autofillHints=""
             android:ems="10"
             android:inputType="time"
             android:text="@string/time" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/looking_for_trains"
+            android:textAlignment="center"
+            android:visibility="invisible" />
     </LinearLayout>
 
     <Button
@@ -63,6 +80,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:onClick="onClickFindTrains"
         android:text="@string/find_trains"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

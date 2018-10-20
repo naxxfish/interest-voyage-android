@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".StationPicker" android:theme="@style/SearchTheme"></activity>
     </application>
 
 </manifest>
